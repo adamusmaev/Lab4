@@ -57,7 +57,6 @@ public class Note extends AppCompatActivity {
 
                 final String id = cursor.getString(idIndex);
 
-
                 Button button = new Button(this);
                 button.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 button.setText("Редактировать");
