@@ -91,8 +91,6 @@ public class UpdateNote extends AppCompatActivity implements View.OnClickListene
         btnAdd = (Button) findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(this);
 
-        btnRead = (Button) findViewById(R.id.btnRead);
-        btnRead.setOnClickListener((View.OnClickListener) this);
 
         btnClear = (Button) findViewById(R.id.btnClear);
         btnClear.setOnClickListener((View.OnClickListener) this);
@@ -191,25 +189,6 @@ public class UpdateNote extends AppCompatActivity implements View.OnClickListene
                         Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
-                break;
-
-            case R.id.btnRead:
-                Cursor cursor = database.query(DBHelper.TABLE_NOTES, null, null, null, null, null, null);
-
-                if (cursor.moveToFirst()) {
-                    int idIndex = cursor.getColumnIndex(DBHelper.KEY_ID_NOTE);
-                    int nameIndex = cursor.getColumnIndex(DBHelper.KEY_NAME_NOTE);
-                    int dateIndex = cursor.getColumnIndex(DBHelper.KEY_DATE_NOTE);
-                    int descriptionIndex = cursor.getColumnIndex(DBHelper.KEY_DESCRIPTION_NOTE);
-                    do {
-                        Log.d("mLog", "ID = " + cursor.getInt(idIndex) +
-                                ", name = " + cursor.getString(nameIndex) + " date: " + cursor.getString(dateIndex)
-                                + " description: " + cursor.getString(descriptionIndex));
-                    } while (cursor.moveToNext());
-                } else
-                    Log.d("mLog", "0 rows");
-
-                cursor.close();
                 break;
 
             case R.id.btnClear:

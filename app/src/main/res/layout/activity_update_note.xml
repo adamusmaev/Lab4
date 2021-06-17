@@ -90,12 +90,6 @@
                 android:text="Обновить">
         </Button>
         <Button
-                android:id="@+id/btnRead"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Read">
-        </Button>
-        <Button
                 android:id="@+id/btnClear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

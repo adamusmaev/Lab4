@@ -20,6 +20,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String KEY_NAME_NOTE = "namenote";
     public static final String KEY_DATE_NOTE = "datenote";
     public static final String KEY_DESCRIPTION_NOTE = "descriptionote";
+    public static final String KEY_STATE_DESCRIPTION = "statenote";
 
     public static final String KEY_NOTE_ID = "noteid";
     public static final String KEY_TAG_ID = "tagid";
@@ -41,6 +42,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         db.execSQL("create table " + TABLE_TAGS_NOTES + "(" + KEY_NOTE_ID
                 + " integer," + KEY_TAG_ID + " integer)");
+
 
     }
 

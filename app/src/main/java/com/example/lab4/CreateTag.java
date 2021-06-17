@@ -57,21 +57,7 @@ public class CreateTag extends AppCompatActivity implements View.OnClickListener
                 toast.show();
                 break;
 
-            case R.id.btnRead:
-                Cursor cursor = database.query(DBHelper.TABLE_TAGS, null, null, null, null, null, null);
 
-                if (cursor.moveToFirst()) {
-                    int idIndex = cursor.getColumnIndex(DBHelper.KEY_ID_TAG);
-                    int nameIndex = cursor.getColumnIndex(DBHelper.KEY_NAME_TAG);
-                    do {
-                        Log.d("mLog", "ID = " + cursor.getInt(idIndex) +
-                                ", name = " + cursor.getString(nameIndex));
-                    } while (cursor.moveToNext());
-                } else
-                    Log.d("mLog", "0 rows");
-
-                cursor.close();
-                break;
 
             case R.id.btnClear:
                 database.delete(DBHelper.TABLE_TAGS, null, null);
